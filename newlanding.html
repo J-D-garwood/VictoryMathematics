@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victory Mathematics</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    /* HERO */
+    .hero {
+      position: relative;
+      background: url('assets/images/Student_Studying_Maths.jpg') no-repeat center/cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: left;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      max-width: 600px;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .hero a {
+      background: white;
+      color: #333;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* FORM SECTION */
+    .form-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    form {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 12px;
+      background: #fff;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #000;
+    }
+    /* TESTIMONIALS */
+    .testimonials {
+      background: #f9f9f9;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .testimonials h2 {
+      font-size: 32px;
+    }
+    .testimonial-grid {
+      margin-top: 30px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .testimonial {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    footer {
+      background: #fff;
+      border-top: 1px solid #ddd;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Confident Maths Starts Here</h1>
+      <p>One-to-one coaching that builds understanding, speed, and results. First lesson is free.</p>
+      <a href="#lead-form">Book the free lesson</a>
+    </div>
+  </section>
+
+  <!-- LEAD FORM -->
+  <section id="lead-form" class="form-section">
+    <div>
+      <h2>Tell us where to help</h2>
+      <p>No phone number on the site—just this quick form. We’ll text or call you back to schedule the free first lesson.</p>
+      <ul>
+        <li>✔ Fast response—usually within the hour (9am–7pm).</li>
+        <li>✔ One free lesson to diagnose gaps and set a plan.</li>
+        <li>✔ Flexible after-school and weekend times.</li>
+      </ul>
+    </div>
+    <form
+  id="leadForm"
+  action="https://formspree.io/f/xrbaknyn"
+  method="POST"
+>
+  <label>Your name</label>
+  <input type="text" name="parent_name" required />
+
+  <label>Your mobile number</label>
+  <input type="tel" name="phone" required placeholder="0412 345 678" />
+
+  <label>Student’s name</label>
+  <input type="text" name="student_name" required />
+
+  <label>Biggest maths goal</label>
+  <select name="goal" required>
+    <option value="" disabled selected>Select one</option>
+    <option value="confidence">Build confidence</option>
+    <option value="catchup">Catch up & pass</option>
+    <option value="topband">Reach a top band</option>
+    <option value="exam">Exam preparation</option>
+    <option value="uni">University entrance focus</option>
+  </select>
+
+  <label>Anything else? (optional)</label>
+  <textarea name="notes" rows="3"></textarea>
+
+  <!-- Extras -->
+  <input type="hidden" name="_subject" value="New tutoring enquiry" />
+  <input type="hidden" name="_template" value="table" />
+  <!-- Honeypot (spam trap) -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+  <!-- Redirect after success (optional) -->
+  <!-- <input type="hidden" name="_next" value="https://your-domain.com/thanks.html" /> -->
+
+  <label style="display:flex;gap:.5rem;align-items:center;margin-top:10px">
+    <input type="checkbox" name="consent" required />
+    I agree to be contacted about lessons.
+  </label>
+
+  <button type="submit">Send & book the free lesson</button>
+  <p id="formStatus"></p>
+</form>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <h2>What parents say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>“Jimmy helped Levi jump two grade bands in one term. The weekly check-ins and clear goals made all the difference.”</p>
+        <small>- Belinda N., Year 10 parent</small>
+      </div>
+      <div class="testimonial">
+        <p>“After a month my daughter wasn’t afraid of maths anymore—she actually looks forward to lessons.”</p>
+        <small>- Raman S., Year 7 parent</small>
+      </div>
+      <div class="testimonial">
+        <p>“Straightforward plan, measurable progress, and prompt communication. Highly recommend.”</p>
+        <small>- Nilmini D., Year 12 parent</small>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Victory Maths Tutoring
+  </footer>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formStatus').textContent = 'Thanks! We will contact you shortly.';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
