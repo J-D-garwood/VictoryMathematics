@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victory Mathematics</title>
+  <style>
+    :root{
+  --bg:#ffffff;
+  --text:#1f2937;         /* slate-800 */
+  --muted:#6b7280;        /* slate-500 */
+  --brand:#facc15;        /* yellow-400 */
+  --brand-ink:#0f172a;    /* slate-900 */
+  --card:#ffffff;
+  --line:#e5e7eb;         /* gray-200 */
+  --shadow: 0 10px 25px rgba(2,6,23,.08);
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; font-family: Arial, sans-serif; color:var(--text); background:var(--bg);
+}
+
+/* HERO (unchanged, just keep yours) */
+.hero{
+  position:relative;
+  background:url(assets/images/istockphoto-1225782563-1024x1024.jpg) no-repeat center/cover;
+  color:white; padding:120px 20px; text-align:left;
+}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.hero-content{position:relative;max-width:1100px;margin:auto;z-index:1}
+.hero h1{font-size:56px;margin:0 0 16px}
+.hero p{font-size:20px;margin:0 0 28px}
+.hero a{background:white;color:var(--brand-ink);padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:bold}
+
+/* Curved divider after hero */
+.section-divider{
+  display:block; line-height:0; transform:translateY(1px);
+}
+.section-divider svg{display:block;width:100%;height:auto}
+
+/* Generic section shells */
+.section{padding:72px 20px}
+.container{max-width:1100px;margin:auto}
+
+.section-title{
+  font-size:32px; margin:0 0 14px; text-align:center;
+}
+.section-kicker{
+  display:inline-block; font-size:14px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px; text-align:center; width:100%;
+}
+.section-sub{
+  font-size:18px; color:var(--muted); max-width:820px; margin:10px auto 0; text-align:center;
+}
+
+/* ABOUT */
+.about .features{
+  display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  margin-top:36px;
+}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px; box-shadow:var(--shadow);
+}
+.card h3{margin:0 0 8px;font-size:18px}
+.badge{
+  display:inline-block; background:var(--brand); color:var(--brand-ink);
+  padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px;
+}
+
+/* LEAD FORM */
+.form-section{
+  padding:72px 20px; 
+  background:
+    radial-gradient(1200px 400px at 10% 0%, rgba(250,204,21,.12), transparent 60%),
+    radial-gradient(900px 300px at 90% 0%, rgba(250,204,21,.08), transparent 60%),
+    #fff;
+}
+.form-grid{
+  max-width:1100px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;
+}
+@media (max-width:900px){ .form-grid{grid-template-columns:1fr} }
+
+.form-highlights .list{
+  margin:18px 0 0; padding:0; list-style:none; display:grid; gap:10px;
+}
+.form-highlights .list li{
+  display:flex; gap:10px; align-items:flex-start;
+}
+.tick{
+  flex:0 0 auto; width:22px; height:22px; border-radius:50%;
+  background:var(--brand); color:var(--brand-ink); font-weight:900; display:grid; place-items:center;
+  line-height:1; font-size:14px;
+}
+
+form{
+  border:1px solid var(--line); padding:24px; border-radius:var(--radius);
+  background:rgba(255,255,255,.9); backdrop-filter:saturate(140%) blur(6px); box-shadow:var(--shadow);
+}
+label{display:block; margin-top:14px; font-weight:700; font-size:14px}
+input, select, textarea{
+  width:100%; padding:12px 12px; margin-top:7px; border-radius:10px; border:1px solid #cbd5e1;
+  transition: box-shadow .2s, border-color .2s, transform .02s;
+  background:#fff;
+}
+input:focus, select:focus, textarea:focus{
+  outline:none; border-color:#fde047; box-shadow:0 0 0 4px rgba(250,204,21,.25);
+}
+button{
+  margin-top:20px; padding:13px 18px; background:var(--brand-ink); color:white; border:none; border-radius:12px;
+  font-weight:800; cursor:pointer; transition:transform .05s ease, opacity .2s;
+}
+button:hover{opacity:.95}
+button:active{transform:translateY(1px)}
+#formStatus{margin-top:10px; font-size:14px; color:#065f46}
+
+/* TESTIMONIALS */
+.testimonials{
+  background:
+    radial-gradient(800px 300px at 20% 0%, rgba(250,204,21,.14), transparent 60%),
+    linear-gradient(180deg, #fafafa, #f6f6f6);
+  padding:84px 20px; text-align:center; border-top:1px solid var(--line);
+}
+.testimonials .testimonial-grid{
+  margin-top:30px; display:grid; gap:22px;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+}
+.testimonial{
+  background:white; padding:22px; border-radius:var(--radius); border:1px solid var(--line);
+  box-shadow:var(--shadow); text-align:left; position:relative;
+}
+.testimonial::before{
+  content:"“"; position:absolute; top:-18px; left:16px; font-size:64px; color:#e5e7eb; line-height:1;
+}
+.stars{color:#f59e0b; font-size:14px; letter-spacing:.06em; margin-bottom:8px}
+.person{display:flex; align-items:center; gap:10px; margin-top:14px; color:var(--muted); font-size:14px}
+.avatar{
+  width:28px;height:28px;border-radius:50%; background:#ffe58f; display:grid; place-items:center;
+  font-weight:800; color:#7c5b00;
+}
+.privacy-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted); /* or just #6b7280 if you don't have vars */
+}
+
+html { scroll-behavior: smooth; }
+
+.navbar {
+  position: fixed; /* sit over the hero */
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background: transparent;           /* transparent on hero */
+  color: #fff;                       /* white text on hero */
+  border-bottom: 1px solid transparent;
+  transition: background .25s, color .25s, border-color .25s;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.logo { font-weight: 800; font-size: 18px; color: #fff; }
+
+.navbar nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #fff;               /* white while over hero */
+  font-weight: 600;
+  transition: color .2s, opacity .2s;
+}
+.navbar nav a:hover { opacity: .9; }
+
+/* When not overlapping hero, switch to a light, solid bar */
+.navbar.solid {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  border-bottom-color: #e5e7eb;
+  color: #111827;
+}
+.navbar.solid .logo { color: #111827; }
+.navbar.solid nav a { color: #374151; }
+.navbar.solid nav a:hover { color: #f59e0b; }
+
+/* Prevent anchors being hidden under the fixed nav */
+.section, #about, #lead-form, #testimonials { scroll-margin-top: 80px; }
+
+/* FOOTER */
+footer{
+  background:#fff; border-top:1px solid var(--line); padding:24px; text-align:center; font-size:14px; color:var(--muted);
+}
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Victory Maths Tutoring</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#lead-form">Free Lesson</a>
+      <a href="#testimonials">Testimonials</a>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Book Your Free First Lesson Today</h1>
+      <p>Understand more. Stress less. Score higher. That's a Victory.</p>
+      <a href="#lead-form">Book the free lesson</a>
+    </div>
+  </section>
+  <!-- Divider -->
+  <div class="section-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path d="M0,32 C320,96 1120,-32 1440,32 L1440,80 L0,80 Z" fill="#fff"></path>
+  </svg>
+  </div>
+
+
+    <!-- ABOUT -->
+  <section id="about" class="about section">
+  <div class="container">
+    <div class="section-kicker">About us</div>
+    <h2 class="section-title">Why Choose Victory Mathematics?</h2>
+    <p class="section-sub">
+      At Victory Maths Tutoring, we specialise in building confidence and results for high school students in Years 10–12.
+      From catching up on the basics to mastering advanced HSC strategies, every student gets targeted support.
+    </p>
+
+    <div class="features">
+      <div class="card">
+        <!--<span class="badge">Personalised</span>-->
+        <h3>Tailored Lessons</h3>
+        <p>Goals-driven sessions that meet your child where they are and move them forward.</p>
+      </div>
+      <div class="card">
+        <!--<span class="badge">Senior Years</span>-->
+        <h3>Years 10–12 Focus</h3>
+        <p>Algebra, calculus, exam technique — everything pointed at the HSC.</p>
+      </div>
+      <div class="card">
+        <!--<span class="badge">Results</span>-->
+        <h3>Confidence & Marks</h3>
+        <p>We turn stress into progress with clear explanations and practice that sticks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- LEAD FORM -->
+ <section id="lead-form" class="form-section">
+  <div class="form-grid">
+    <div class="form-highlights">
+      <div class="section-kicker">Get started</div>
+      <h2 class="section-title" style="text-align:left">Start With a Free Lesson</h2>
+      <p class="section-sub" style="text-align:left; margin:8px 0 0">
+        No phone on the site — just this quick form. We’ll text or call you back to schedule the free first lesson.
+      </p>
+      <ul class="list">
+        <li><span class="tick">✓</span> Fast response.</li>
+        <li><span class="tick">✓</span> Free lesson to diagnose gaps and set a plan.</li>
+        <li><span class="tick">✓</span> Flexible after-school and weekend times.</li>
+      </ul>
+    </div>
+
+    <form id="leadForm" action="https://formspree.io/f/xrbaknyn" method="POST">
+      <label>Your name</label>
+      <input type="text" name="parent_name" required />
+
+      <label>Your mobile number</label>
+      <input type="tel" name="phone" required placeholder="0412 345 678" />
+
+      <label>Student’s name</label>
+      <input type="text" name="student_name" required />
+
+      <label>Biggest maths goal</label>
+      <select name="goal" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="topband">Getting top marks</option>
+        <option value="confidence">Building confidence</option>
+        <option value="catchup">Catching up &amp; passing</option>
+        <option value="exam">HSC Exam Mastery</option>
+      </select>
+
+      <label>Anything else we should know?</label>
+      <textarea name="notes" rows="3"></textarea>
+
+      <input type="hidden" name="_subject" value="New tutoring enquiry" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <label style="display:flex;gap:.5rem;align-items:center;margin-top:10px">
+        <input type="checkbox" name="consent" required />
+        I agree to be contacted about lessons.
+      </label>
+
+      <button type="submit">Send &amp; book the free lesson</button>
+      <p id="formStatus" role="status" aria-live="polite"></p>
+
+      <p class="privacy-note">
+      🔒 We’ll never share your contact details with anyone else.
+      </p>
+    </form>
+  </div>
+</section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <h2>What parents say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>“Jimmy knows exactly how to prepare senior students. My daughter in Year 12 not only improved her marks but also feels less stressed heading into exams.”</p>
+        <small>- John R.,Year 12 parent</small>
+      </div>
+      <div class="testimonial">
+        <p>“My son was struggling with advanced algebra. Jimmy broke it down into manageable steps and his confidence grew massively.”</p>
+        <small>- Kirsten G.,Year 11 parent</small>
+      </div>
+      <div class="testimonial">
+        <p>“Jimmy helped my daughter Ashlyn move from barely passing to consistently scoring above 75%.”</p>
+        <small>- Kara P.,Year 10 parent</small>
+      </div>
+      <div class="testimonial">
+        <p>“Clear explanations, targeted practice, and ongoing feedback made a huge difference. My son finally feels ready for the HSC.”</p>
+        <small>- Will G.,Year 11 parent</small>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Victory Maths Tutoring
+  </footer>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formStatus').textContent = 'Thanks! We will contact you shortly.';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
