@@ -25,8 +25,10 @@ body{
 /* HERO (unchanged, just keep yours) */
 .hero{
   position:relative;
-  background:url(assets/images/istockphoto-1225782563-1024x1024.jpg) no-repeat center/cover;
-  color:white; padding:120px 20px; text-align:left;
+  background:url(assets/images/iStock-1225782563.jpg) no-repeat center/cover;
+  color:white;
+  padding:160px 20px 180px; /* was 120px 20px; adds vertical height */
+  text-align:left;
 }
 .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
 .hero-content{position:relative;max-width:1100px;margin:auto;z-index:1}
@@ -35,34 +37,80 @@ body{
 .hero a{background:white;color:var(--brand-ink);padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:bold}
 
 /* Curved divider after hero */
+/* 2) Reduce the gap between HERO and ABOUT just a smidge */
 .section-divider{
-  display:block; line-height:0; transform:translateY(1px);
+  display:block;
+  line-height:0;
+  transform:translateY(-6px); /* pull the wave up slightly */
+  margin-bottom:-14px;        /* closes the space */
 }
 .section-divider svg{display:block;width:100%;height:auto}
+.about.section{ padding-top:64px } /* was 72px; tiny trim */
 
 /* Generic section shells */
 .section{padding:72px 20px}
 .container{max-width:1100px;margin:auto}
 
 .section-title{
-  font-size:32px; margin:0 0 14px; text-align:center;
+  font-size:32px;
+  margin:0 0 14px;
+  text-align:center;
+  background: linear-gradient(90deg, #111827, #7c5b00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;                 /* subtle ink->gold text fade */
 }
 .section-kicker{
-  display:inline-block; font-size:14px; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:10px; text-align:center; width:100%;
+  display:inline-block;
+  font-size:14px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--brand-ink);
+  background: rgba(250,204,21,.18);   /* soft brand tint */
+  padding:6px 10px;
+  border-radius:999px;
+  margin-bottom:12px;
+  text-align:center;
+  width:auto;                         /* pill instead of full width */
 }
 .section-sub{
-  font-size:18px; color:var(--muted); max-width:820px; margin:10px auto 0; text-align:center;
+  font-size:18px;
+  color:var(--muted);
+  max-width:820px;
+  margin:10px auto 0;
+  text-align:center;
 }
 
 /* ABOUT */
-.about .features{
-  display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  margin-top:36px;
+.about{
+  background:
+    radial-gradient(900px 240px at 15% 0%, rgba(250,204,21,.08), transparent 60%),
+    radial-gradient(700px 220px at 85% 0%, rgba(250,204,21,.06), transparent 60%),
+    #fff;
+  position: relative;
 }
+
+
 .card{
-  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-  padding:22px; box-shadow:var(--shadow);
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-1px -1px auto -1px;
+  height:4px;                         /* thin brand bar on top */
+  background: linear-gradient(90deg, #facc15, #fde047);
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(2,6,23,.10);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 .card h3{margin:0 0 8px;font-size:18px}
 .badge{
@@ -205,8 +253,8 @@ footer{
     <div class="logo">Victory Maths Tutoring</div>
     <nav>
       <a href="#about">About</a>
-      <a href="#lead-form">Free Lesson</a>
-      <a href="#testimonials">Testimonials</a>
+      <a href="#lead-form">Booking Form</a>
+      <!--<a href="#testimonials">Testimonials</a>-->
     </nav>
   </div>
 </header>
@@ -220,21 +268,22 @@ footer{
       <a href="#lead-form">Book the free lesson</a>
     </div>
   </section>
-  <!-- Divider -->
+  <!-- Divider
   <div class="section-divider" aria-hidden="true">
   <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
     <path d="M0,32 C320,96 1120,-32 1440,32 L1440,80 L0,80 Z" fill="#fff"></path>
   </svg>
-  </div>
+  </div>-->
 
 
-    <!-- ABOUT -->
-  <section id="about" class="about section">
+<!-- ABOUT -->
+<section id="about" class="about section">
   <div class="container">
     <div class="section-kicker">About us</div>
     <h2 class="section-title">Why Choose Victory Mathematics?</h2>
     <p class="section-sub">
       At Victory Maths Tutoring, we specialise in building confidence and results for high school students in Years 10–12.
+      Based in Sydney, we provide <strong>online tutoring services</strong> that make expert help accessible from anywhere.
       From catching up on the basics to mastering advanced HSC strategies, every student gets targeted support.
     </p>
 
@@ -257,6 +306,7 @@ footer{
     </div>
   </div>
 </section>
+
 
 
 
@@ -318,7 +368,7 @@ footer{
 </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonials">
+ <!-- <section class="testimonials" id="testimonials">
     <h2>What parents say</h2>
     <div class="testimonial-grid">
       <div class="testimonial">
@@ -339,7 +389,7 @@ footer{
       </div>
 
     </div>
-  </section>
+  </section>-->
 
   <footer>
     © 2025 Victory Maths Tutoring
