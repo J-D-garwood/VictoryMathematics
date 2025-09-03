@@ -327,43 +327,50 @@ footer{
     </div>
 
     <form id="leadForm" action="https://formspree.io/f/xrbaknyn" method="POST">
-      <label>Your name</label>
-      <input type="text" name="parent_name" required />
+  <label>Your name</label>
+  <input type="text" name="parent_name" autocomplete="name" required />
 
-      <label>Your mobile number</label>
-      <input type="tel" name="phone" required placeholder="0412 345 678" />
+  <label>Your email</label>
+  <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" />
 
-      <label>Student’s name</label>
-      <input type="text" name="student_name" required />
+  <label>Your mobile number</label>
+  <input type="tel" name="phone" autocomplete="tel" required placeholder="0412 345 678" />
 
-      <label>Biggest maths goal</label>
-      <select name="goal" required>
-        <option value="" disabled selected>Select one</option>
-        <option value="topband">Getting top marks</option>
-        <option value="confidence">Building confidence</option>
-        <option value="catchup">Catching up &amp; passing</option>
-        <option value="exam">HSC Exam Mastery</option>
-      </select>
+  <label>Student’s name</label>
+  <input type="text" name="student_name" required />
 
-      <label>Anything else we should know?</label>
-      <textarea name="notes" rows="3"></textarea>
+  <label>Biggest maths goal</label>
+  <select name="goal" required>
+    <option value="" disabled selected>Select one</option>
+    <option value="topband">Getting top marks</option>
+    <option value="confidence">Building confidence</option>
+    <option value="catchup">Catching up &amp; passing</option>
+    <option value="exam">HSC Exam Mastery</option>
+  </select>
 
-      <input type="hidden" name="_subject" value="New tutoring enquiry" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+  <label>Anything else we should know?</label>
+  <textarea name="notes" rows="3"></textarea>
 
-      <label style="display:flex;gap:.5rem;align-items:center;margin-top:10px">
-        <input type="checkbox" name="consent" required />
-        I agree to be contacted about lessons.
-      </label>
+  <input type="hidden" name="_subject" value="New tutoring enquiry" />
+  <input type="hidden" name="_template" value="table" />
 
-      <button type="submit">Send &amp; book the free lesson</button>
-      <p id="formStatus" role="status" aria-live="polite"></p>
+  <!-- Formspree-recognised honeypot -->
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
-      <p class="privacy-note">
-      🔒 We’ll never share your contact details with anyone else.
-      </p>
-    </form>
+  <!-- Optional: redirect after success -->
+  <!-- <input type="hidden" name="_redirect" value="https://YOURDOMAIN/thanks.html"> -->
+
+  <label style="display:flex;gap:.5rem;align-items:center;margin-top:10px">
+    <input type="checkbox" name="consent" required />
+    I agree to be contacted about lessons.
+  </label>
+
+  <button type="submit">Send &amp; book the free lesson</button>
+  <p id="formStatus" role="status" aria-live="polite"></p>
+
+  <p class="privacy-note">🔒 We’ll never share your contact details with anyone else.</p>
+</form>
+
   </div>
 </section>
 
