@@ -365,6 +365,7 @@ footer{
     I agree to be contacted about lessons.
   </label>
 
+  <input type="hidden" name="_redirect" value="https://yourdomain.com/thanks.html">
   <button type="submit">Send &amp; book the free lesson</button>
   <p id="formStatus" role="status" aria-live="polite"></p>
 
@@ -401,13 +402,5 @@ footer{
   <footer>
     © 2025 Victory Maths Tutoring
   </footer>
-
-  <script>
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('formStatus').textContent = 'Thanks! We will contact you shortly.';
-      this.reset();
-    });
-  </script>
 </body>
 </html>
